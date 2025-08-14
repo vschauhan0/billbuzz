@@ -1,0 +1,13 @@
+#animation{
+    animation: style ease-out 5s infinite;
+    
+}
+
+@keyframes style {
+      0% {
+        margin-top: 0%;
+      }
+      100% {
+        margin-top: -45%;
+      }
+    }

@@ -26,8 +26,8 @@ function Navbar() {
                 <FontAwesomeIcon icon="fa-solid fa-bars" />
               </Link>
             </span>
-            <span className="">
-              <Link to="/">BillBuzz</Link>
+            <span className="text-xl">
+              <Link to="/"><span className="text-red-600 text-2xl">B</span>ill<span  className="text-red-600 text-2xl">B</span>uzz</Link>
             </span>
           </li>
           {userEmail ? (
