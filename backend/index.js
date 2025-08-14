@@ -1,15 +1,14 @@
 const connectToMongo = require('./db');
 const express = require('express')
-const cors = require('cors');
+const cors = require("cors");
+const authRoutes = require("./routes/auth");
+
 
 connectToMongo();
 const app = express()
+app.use(cors());
 const port = 5000
 
-app.use(cors({
-  origin: 'http://localhost:3000', // React dev server
-  credentials: true,
-}));
 
 app.use(express.json())
 app.use('/api/auth', require('./routes/auth'))
