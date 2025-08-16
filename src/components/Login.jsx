@@ -1,21 +1,25 @@
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./contexts/AuthContext";
 
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const { handleLogin } = useAuth(); // from AuthContext
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await api.post("/auth/loginuser", form);
-      localStorage.setItem("token", res.data.token);
+      handleLogin(res.data.email, res.data.authToken);
       alert("Loged in sucessfully")
       navigate("/");
 
     } catch (err) {
       alert(err.response?.data?.msg || "Login failed");
+      console.log(err);
     }
   };
 
@@ -37,6 +41,7 @@ function Login() {
               <input
                 type="email"
                 id="email"
+                value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="john.doe@company.com"

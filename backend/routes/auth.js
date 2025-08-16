@@ -77,7 +77,7 @@ router.post(
         },
       };
       const authToken = jwt.sign(data, JWT_sign);
-      res.json({user});
+      res.json({ authToken, email: user.email });
     } catch (error) {
       res.status(500).send("some error ");
     }

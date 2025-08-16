@@ -1,10 +1,12 @@
 
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -17,6 +19,7 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = (email, token) => {
     localStorage.setItem("authToken", token);
     localStorage.setItem("userEmail", email);
+    console.log("Logging in:", email, token);
     setUserEmail(email);
   };
 
@@ -24,6 +27,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userEmail");
     setUserEmail(null);
+    navigate("login");
   };
 
   return (
