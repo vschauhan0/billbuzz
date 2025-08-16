@@ -1,5 +1,5 @@
-var jwt = require("jsonwebtoken");
-const JWT_sign = "FuckYou!";
+const jwt = require("jsonwebtoken");
+const JWT_sign = process.env.JWT_SECRET;
 
 const fetchuser = (req, res, next) => {
   const token = req.header("auth-token");
@@ -7,7 +7,7 @@ const fetchuser = (req, res, next) => {
     res.status(401).send({ error: "Invaliod token" });
   }
   try {
-    const data = jwt.verify(token,JWT_sign);
+    const data = jwt.verify(token, process.env.JWT_SECRET);
     req.user = data.user;
     next();
   } catch (error) {

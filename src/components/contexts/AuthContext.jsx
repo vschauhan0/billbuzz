@@ -19,7 +19,6 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = (email, token) => {
     localStorage.setItem("authToken", token);
     localStorage.setItem("userEmail", email);
-    console.log("Logging in:", email, token);
     setUserEmail(email);
   };
 

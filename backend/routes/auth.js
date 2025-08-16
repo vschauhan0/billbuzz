@@ -7,7 +7,7 @@ var jwt = require("jsonwebtoken");
 var fetchuser = require("../middleware/fetchuser");
 
 
-const JWT_sign = "FuckYou!";
+const JWT_sign = process.env.JWT_SECRET;
 
 // Route 1: create user using "/api/auth/createuser" authrntication not required
 router.post(
@@ -38,7 +38,7 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, JWT_sign);
+      const authToken = jwt.sign(data, process.env.JWT_SECRET);
 
       res.json({ authToken });
     } catch (error) {
@@ -76,10 +76,11 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, JWT_sign);
+      const authToken = jwt.sign(data, process.env.JWT_SECRET);
       res.json({ authToken, email: user.email });
     } catch (error) {
       res.status(500).send("some error ");
+      console.log(error);
     }
   }
 );
