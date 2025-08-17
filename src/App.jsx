@@ -7,13 +7,13 @@ import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import CompanyDetails from "./components/CompanyDetails";
 
 
 function App() {
   return (
     <>
       <SidebarProvider>
-
         <AuthProvider>
           <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
           <Navbar />
@@ -21,10 +21,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/companyDetails" element={<CompanyDetails />} />
           </Routes>
         </AuthProvider>
       </SidebarProvider>
-    
     </>
   );
 }

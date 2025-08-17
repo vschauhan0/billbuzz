@@ -6,6 +6,7 @@ const CompanyDetailsSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
+    unique:true
   },
   companyName: {
     type: String,
@@ -13,10 +14,6 @@ const CompanyDetailsSchema = new Schema({
     trim: true,
   },
   address: {
-    type: String,
-    required: true,
-  },
-  contactEmail: {
     type: String,
     required: true,
   },
