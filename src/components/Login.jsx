@@ -25,7 +25,7 @@ function Login() {
 
   return (
     <>
-      <div className="shadow-2xl rounded-4xl items-center h-[60vh] w-[30vw] relative left-[37vw] top-[12vh] overflow-hidden">
+      <div className="shadow-2xl bg-white rounded-4xl items-center h-[60vh] w-[30vw] relative left-[37vw] top-[12vh] overflow-hidden">
         <div>
           <h1 className="text-3xl font-bold pl-28 pt-8">Account Details :</h1>
         </div>
@@ -63,7 +63,7 @@ function Login() {
                 placeholder="•••••••••"
                 required
               />
-              <span className="text-sm text-blue-700 left-10">
+              <span className="text-sm text-DarkBlue-700 left-10">
                 Forget password?
               </span>
             </div>
@@ -76,7 +76,7 @@ function Login() {
 
               <button className=" relative inline-flex items-center justify-center p-0.5 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 ">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                  Create Acount
+                  Create Account
                 </span>
               </button>
             </div>

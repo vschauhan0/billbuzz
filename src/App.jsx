@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import CompanyDetails from "./components/CompanyDetails";
+import Inventory from "./components/Inventory";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/companyDetails" element={<CompanyDetails />} />
+            <Route path="/inventory" element={<Inventory />} />
           </Routes>
         </AuthProvider>
       </SidebarProvider>

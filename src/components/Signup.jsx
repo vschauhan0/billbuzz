@@ -33,7 +33,7 @@ function Signup() {
 
   return (
     <>
-      <div className="shadow-2xl rounded-4xl items-center h-[68vh] w-[30vw] relative left-[37vw] top-[8vh] overflow-hidden">
+      <div className="shadow-2xl bg-white rounded-4xl items-center h-[68vh] w-[30vw] relative left-[37vw] top-[8vh] overflow-hidden">
         <div>
           <h1 className="text-3xl font-bold pl-24 pt-8">Welcome to BillBuzz</h1>
         </div>
